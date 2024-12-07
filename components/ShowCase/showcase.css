@@ -1,0 +1,46 @@
+.dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 99;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @media (min-width: 821px) {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    display: flex;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #c97f5f;
+  }
+}
+
+.dot-content-visible {
+  opacity: 100;
+
+  @media (max-width: 821px) {
+    visibility: visible;
+  }
+}
+
+.dot-content-invisible {
+  opacity: 0;
+
+  @media (max-width: 821px) {
+    visibility: hidden;
+  }
+}
+
+.dot-1 {
+  top: 15%;
+  left: 46%;
+}

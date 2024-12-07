@@ -1,0 +1,148 @@
+/* Scrollable container styles */
+.scrollable-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll; /* Enables horizontal scrolling */
+  gap: 16px;
+  padding: 16px;
+  height: 540px; /* Set container height */
+  scroll-behavior: smooth; /* Smooth scrolling effect */
+}
+
+.scrollable-container::-webkit-scrollbar {
+  height: 8px; /* Horizontal scrollbar height */
+  display: none;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar thumb color */
+  border-radius: 4px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Card styles */
+.card {
+  /* max-width: 200px; */
+  min-width: 300px;
+  width: 300px;
+  height: 423px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 10px;
+
+  /* Flex */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img__container {
+    position: relative;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .card__img--2 {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s linear;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9;
+    }
+
+    .overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #000;
+      opacity: 0;
+      border-radius: 5px;
+      transition: opacity 0.2s linear;
+    }
+
+    .icon__container {
+      width: 60%;
+      position: absolute;
+      bottom: 5%;
+      left: 20%;
+      text-align: center;
+      transition: all 0.3s linear;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 99;
+
+      .product__icon {
+        width: 35px;
+        height: 35px;
+        border-radius: 100%;
+        color: goldenrod;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-around;
+        transition: all 0.2s linear;
+        align-items: center;
+
+        svg {
+          cursor: pointer;
+        }
+
+        &:hover {
+          background-color: goldenrod;
+        }
+
+        &:hover svg {
+          color: #fff;
+        }
+      }
+    }
+
+    .icon__container--desktop {
+      transform: translateY(20px);
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  a {
+    text-align: center;
+  }
+
+  &:hover .icon__container {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover .overlay {
+    opacity: 0.2;
+  }
+
+  /* &:hover .card__img--1 {
+    opacity: 0;
+  } */
+
+  &:hover .card__img--2 {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .card-content {
+    height: 20%;
+  }
+}

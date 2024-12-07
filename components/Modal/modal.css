@@ -1,0 +1,59 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+
+  .modal-overlay {
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 9;
+  }
+
+  .modal-content-wrapper {
+    position: relative;
+    /* background-color: #fff; */
+    max-width: 700px;
+    margin: auto;
+    z-index: 99;
+    border-radius: 10px;
+
+    @media (max-width: 767px) {
+      max-width: 80vw;
+      margin: 10px 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .modal-content {
+      @media (max-width: 767px) {
+        height: 100vh;
+        overflow-y: scroll;
+      }
+
+      &::-webkit-scrollbar {
+        width: 5px;
+        height: 8px;
+        background-color: #aaa; /* or add it to the track */
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #000;
+        border-radius: 10px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
