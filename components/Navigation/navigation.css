@@ -1,0 +1,13 @@
+.mobile-menu {
+  transform: translateX(-100%);
+  transition: transform 0.25s linear;
+}
+
+.mobile-menu.active {
+  transform: translateY(0);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #c97f5f;
+}

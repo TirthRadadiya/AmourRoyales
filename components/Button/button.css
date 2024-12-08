@@ -1,0 +1,22 @@
+.btn {
+  font-weight: 500;
+  display: inline-block;
+  font-size: 16px;
+  /* height: 3.8rem; */
+  padding: 10px 20px;
+  letter-spacing: 0.2px;
+  border-radius: 10px;
+  color: #fff;
+  border: 0;
+  letter-spacing: 0.2px;
+  transition: all 1s liner;
+}
+
+.btn-primary {
+  background: #c97f5f;
+  transition: all 1s liner;
+
+  &:hover {
+    background: #3c3836;
+  }
+}
