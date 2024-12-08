@@ -3,6 +3,7 @@ import Header from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { ReduxProvider } from "@/redux/provider";
 import ModalComponent from "../components/Modal";
+import Breadcrumbs from "../components/BreadCrumbs";
 
 export const metadat = {
   title: "Create Next App",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <div>
             <Header />
+            <Breadcrumbs />
             {children}
             <Footer />
           </div>
