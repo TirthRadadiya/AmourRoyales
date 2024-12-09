@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import "./card.css";
 import Card from "./SingleCard";
 import Title from "../Title";
 
@@ -29,7 +28,7 @@ const CardContainer = ({ title, fetchURL = "", className = "" }) => {
             <Title>{title}</Title>
             <div className="scrollable-container">
               {products.map((card, index) => (
-                <Card card={card} key={index} />
+                <Card card={card} key={index} className="min-w-[300px] h-[421px] pb-10"/>
               ))}
             </div>
           </div>

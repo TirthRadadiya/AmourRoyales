@@ -26,9 +26,9 @@
 /* Card styles */
 .card {
   /* max-width: 200px; */
-  min-width: 300px;
-  width: 300px;
-  height: 423px;
+  /* min-width: 300px;
+  width: 300px; */
+  /* height: 423px; */
   letter-spacing: 1px;
   overflow: hidden;
   position: relative;

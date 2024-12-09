@@ -17,3 +17,28 @@
 .color-secondary {
   color: #3c3836
 }
+
+.filters {
+  width: fit-content;
+  transition: transform 0.3s linear;
+
+  @media (max-width: 1153px) {
+    position: absolute;
+    /* transform: translateX(-150%); */
+    background-color: #fff;
+    z-index: 999;
+  }
+}
+
+.products {
+  width: 100%;
+  .filter-btn {
+    display: none;
+    text-align: right;
+    margin-bottom: 50px;
+
+    @media (max-width: 1153px) {
+      display: block;
+    }
+  }
+}
