@@ -11,12 +11,11 @@ import { addFilterOptions } from "@/redux/features/filter-slice";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [filterVisible, setIsfilterVisible] = useState(false);
 
   const { color, gold, price, weight } = useAppSelector(
     (state) => state.filter.filters
   );
-
-  console.log(color, gold, price, weight);
 
   const dispatch = useDispatch();
 
@@ -31,11 +30,22 @@ const Products = () => {
     fetchProducts("https://dummyjson.com/products");
   }, []);
 
+  useEffect(() => {
+    if (filterVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [filterVisible]);
+
   return (
     <>
       {/* <CategorySlider /> */}
-      <div className="my-10 flex w-full md:max-w-[90vw] mx-auto relative">
-        <div className="filters">
+      <div className="products-container my-10 flex">
+        <div className={`filters ${filterVisible ? "filter-visible" : ""}`}>
           <div
             className="filter1 p-3 rounded-[5px]"
             style={{
@@ -167,7 +177,10 @@ const Products = () => {
                 "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
             }}
           >
-            <h2 className="border-l-2 border-black m-3 ps-2">Price Range</h2>
+            <div className="flex items-center justify-between">
+              <h2 className="border-l-2 border-black m-3 ps-2">Price Range</h2>
+              <span className="me-5">{price}</span>
+            </div>
             <div className="ms-10 flex items-center">
               <input
                 type="range"
@@ -195,7 +208,12 @@ const Products = () => {
                 "rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px",
             }}
           >
-            <h2 className="border-l-2 border-black m-3 ps-2">Diamon Weight</h2>
+            <div className="flex items-center justify-between">
+              <h2 className="border-l-2 border-black m-3 ps-2">
+                Diamond Weight
+              </h2>
+              <span className="me-5">{weight}</span>
+            </div>
             <div className="ms-10 flex items-center">
               <input
                 type="range"
@@ -206,11 +224,11 @@ const Products = () => {
                 max="10"
                 step="0.1"
                 checked={color === "yellow"}
-                  onChange={(e) =>
-                    dispatch(
-                      addFilterOptions({ key: "weight", value: e.target.value })
-                    )
-                  }
+                onChange={(e) =>
+                  dispatch(
+                    addFilterOptions({ key: "weight", value: e.target.value })
+                  )
+                }
               />
               <label className="ms-2" htmlFor="volume">
                 Volume
@@ -220,7 +238,12 @@ const Products = () => {
         </div>
         <div className="products">
           <div className="filter-btn">
-            <Button className="btn-primary">filters</Button>
+            <Button
+              className="btn-primary"
+              clickFn={() => setIsfilterVisible(!filterVisible)}
+            >
+              filters
+            </Button>
           </div>
           <div className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-4 text-center lg:px-10">
             {products.map((card, index) => (
