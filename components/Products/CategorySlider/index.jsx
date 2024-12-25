@@ -27,7 +27,7 @@ const CategorySlider = () => {
         duration={3000}
       >
         {images.map((img) => (
-          <img src={img} alt="TODO" className="m-3" key={img} />
+          <img src={img} alt="TODO" className="m-3 h-[250px]" key={img}/>
         ))}
       </Slide>
     </div>
