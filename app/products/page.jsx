@@ -3,7 +3,7 @@
 import Card from "@/components/Cards/SingleCard";
 import { useEffect, useState } from "react";
 
-// import CategorySlider from "../../components/Products/CategorySlider";
+import CategorySlider from "../../components/Products/CategorySlider";
 import Button from "../../components/Button";
 import { useAppSelector } from "@/redux/store";
 import { useDispatch } from "react-redux";
@@ -43,7 +43,7 @@ const Products = () => {
 
   return (
     <>
-      {/* <CategorySlider /> */}
+      <CategorySlider />
       <div className="products-container my-10 flex">
         <div className={`filters ${filterVisible ? "filter-visible" : ""}`}>
           <div
