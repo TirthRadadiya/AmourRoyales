@@ -22,13 +22,21 @@ const Card = ({ card, className = "" }) => {
     }
   }, []);
 
-  const handleModal = () => {
+  const openModal = () => {
     dispatch(toggleModal());
+  };
+
+  const setProduct = () => {
     dispatch(setModalProduct(card));
   };
 
+  const handleModal = () => {
+    openModal();
+    setProduct;
+  };
+
   return (
-    <div className={`card mb-10 ${className}`}>
+    <div className={`card mb-10 ${className}`} onClick={setProduct}>
       <div className="img__container">
         {/* <img src="/images/1.jpg" className="card__img" /> */}
         <Link href={`/products/${card.id}`}>

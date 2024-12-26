@@ -9,8 +9,6 @@ const Product = () => {
 
   const path = usePathname();
 
-  console.log(+path.split("/")[2]);
-
   const fetchProduct = async () => {
     const response = await fetch(
       `https://dummyjson.com/products/${+path.split("/")[2]}`
