@@ -5,13 +5,13 @@ import { Slide } from "react-slideshow-image";
 
 const CategorySlider = () => {
   const images = [
-    "https://via.placeholder.com/250",
-    "https://via.placeholder.com/250",
-    "https://via.placeholder.com/250",
-    "https://via.placeholder.com/250",
-    "https://via.placeholder.com/250",
-    "https://via.placeholder.com/250",
-    "https://via.placeholder.com/250",
+    "https://placehold.co/250",
+    "https://placehold.co/250",
+    "https://placehold.co/250",
+    "https://placehold.co/250",
+    "https://placehold.co/250",
+    "https://placehold.co/250",
+    "https://placehold.co/250",
   ];
 
   return (
@@ -27,7 +27,7 @@ const CategorySlider = () => {
         duration={3000}
       >
         {images.map((img) => (
-          <img src={img} alt="TODO" className="m-3" key={img} />
+          <img src={img} alt="TODO" className="m-3 h-[250px]" key={img} />
         ))}
       </Slide>
     </div>
