@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "redux/utility/modal-slice.js", "redux/utility/like-slice.js", "redux/utility/cart-slice.js", "redux/features/auth-slice.js", "redux/store.js", "redux/provider.jsx", "app/layout.jsx", "app/page.jsx", "components/Title/index.jsx", "components/Navigation/index.jsx", "components/Info/index.jsx", "components/HeroSection/index.jsx", "components/Footer/index.jsx", "components/Features/SingleFeature.jsx", "components/Features/Index.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "redux/utility/modal-slice.js", "redux/utility/like-slice.js", "redux/utility/cart-slice.js", "redux/features/auth-slice.js", "redux/store.js", "redux/provider.jsx", "app/layout.jsx", "app/page.jsx", "components/Title/index.jsx", "components/Navigation/index.jsx", "components/Info/index.jsx", "components/HeroSection/index.jsx", "components/Footer/index.jsx", "components/Features/SingleFeature.jsx", "components/Features/Index.jsx", "app/products/[product]/page.jsx"],
   "exclude": ["node_modules"]
 }

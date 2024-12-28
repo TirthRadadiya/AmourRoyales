@@ -6,7 +6,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useDispatch } from "react-redux";
 import "./modal.css";
 import { useEffect } from "react";
-import ProductSlider from "../ProductImages";
+// import ProductSlider from "../ProductImages";
+import ProductDetail from "../ProductDetail";
 
 const Modal = ({ open, onClose, children }) => {
   // Prevent scrolling when modal is open
@@ -63,7 +64,7 @@ const ModalComponent = () => {
         >
           <CloseIcon />
         </div>
-        <div className="mx-auto p-6 dark:bg-card rounded-lg shadow-lg mb-5">
+        {/* <div className="mx-auto p-6 dark:bg-card rounded-lg shadow-lg mb-5">
           <div className="flex flex-col md:flex-row">
             <div className="w-full md:w-1/2 mb-6 md:mb-0">
               <ProductSlider images={images} />
@@ -131,6 +132,9 @@ const ModalComponent = () => {
               </div>
             </div>
           </div>
+        </div> */}
+        <div className="mx-auto p-6 dark:bg-card rounded-lg shadow-lg mb-5">
+          <ProductDetail images={images} />
         </div>
       </div>
     </Modal>

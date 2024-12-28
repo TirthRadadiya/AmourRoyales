@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { ReduxProvider } from "@/redux/provider";
 import ModalComponent from "../components/Modal";
 import Breadcrumbs from "../components/BreadCrumbs";
+import 'react-slideshow-image/dist/styles.css';
 
 export const metadat = {
   title: "Create Next App",
